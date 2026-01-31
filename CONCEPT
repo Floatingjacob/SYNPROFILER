@@ -1,0 +1,16 @@
+file format should be a fancy zip file
+
+pretty much, inside the zip file, there should be text-type files 
+
+MF (manifest)
+
+there should be files with a prefix of "MU_" that adds a menu to the profile. files with names like "MU_NAME_WHATEVER" will be submenus
+
+for example: "MU_NOTES", "MU_NOTES_PERSONAL", etc.
+the MF file should allow you to change properties so you can change names.
+for example: 
+
+MU_NOTES: Notes
+MU_NOTES_PERSONAL: Personal
+
+so, kinda like minecraft lang files
