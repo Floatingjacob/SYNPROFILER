@@ -7,6 +7,9 @@
     {
         input = "";
         Globals.profilePath = "";
+        Globals.profileName = "";
+        Globals.profile = [];
+        Globals.manifest = [];
         if (Globals.profileLoaded)
         {
 

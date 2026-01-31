@@ -1,4 +1,5 @@
-﻿public class Globals
+﻿global using System.Net;
+public class Globals
 {
     public static string version = "0.1";
     public static bool profileLoaded = false;
@@ -7,4 +8,5 @@
     public static string[] manifest;
     public static string profileName;
     public static List<String> profile = [];
+    public static bool displaying = false;
 }
