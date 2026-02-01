@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="SYNCORE">
+      <HintPath>..\SYNCORE\bin\Release\net10.0\SYNCORE.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

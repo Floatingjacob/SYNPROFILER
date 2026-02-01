@@ -1,7 +1,7 @@
 ﻿public class main
 {
     static string input;
-    static string Greeting = $"Welcome to SYNPROFILER: The Overengineered Dossier Program\nStalk With Style!\nv{Globals.version}\n";
+    static string Greeting = $"Welcome to SYNPROFILER: The Overengineered Dossier Program\nStalk With Style!\nSYNPROFILER v{SYNCORE.Globals.SYNPROFILER.version}\nSYNCORE v{SYNCORE.Globals.coreVersion}\n"; // Lazy mode enabled...
     
     static string createMenu = @"
 
@@ -11,7 +11,7 @@
         while (true)
         {
             Console.Clear();
-            string mainMenu = Globals.profileLoaded ? @"#### Main Menu ####
+            string mainMenu = SYNCORE.Globals.SYNPROFILER.profileLoaded ? @"#### Main Menu ####
 
 1. Load Profile (Loaded)
 2. Create Profile
@@ -31,18 +31,18 @@
 
 #### Main Menu ####
 ";
-            Console.Title = "SYNPROFILER: The Overengineered Dossier Program";
+            Console.Title = "SYNPROFILER: The Overengineered Dossier Program"; // bc why not?
             profileManipulation pm = new profileManipulation();
 
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(Greeting);
-            if (!String.IsNullOrWhiteSpace(Globals.profileName))
+            if (!String.IsNullOrWhiteSpace(SYNCORE.Globals.SYNPROFILER.profileName))
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"Profile \"{Globals.profileName}\" Loaded!\n");
+                Console.WriteLine($"Profile \"{SYNCORE.Globals.SYNPROFILER.profileName}\" Loaded!\n"); // ooh, shiny
             }
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(mainMenu);
+            Console.WriteLine(mainMenu); // wheeeeee (translation: let's get this show on the road)
 
             Console.Write("> ");
             switch (input = Console.ReadLine())
@@ -54,8 +54,9 @@
                     pm.loadProfile();
                     break;
                 case "4":
-                    Globals.displaying = true;
-                    viewer.displayMenu(Globals.profile);
+                    
+                    SYNCORE.Globals.SYNPROFILER.displaying = true;
+                    SYNCORE.viewer.displayMenu(SYNCORE.Globals.SYNPROFILER.profile);
                     break;
             }
         }

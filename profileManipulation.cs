@@ -1,16 +1,16 @@
 ﻿public class profileManipulation
 {
     static string input;
-    parser p = new parser();
+    SYNCORE.parser p = new SYNCORE.parser();
     public static string file;
     public void loadProfile()
     {
         input = "";
-        Globals.profilePath = "";
-        Globals.profileName = "";
-        Globals.profile = [];
-        Globals.manifest = [];
-        if (Globals.profileLoaded)
+        SYNCORE.Globals.SYNPROFILER.profilePath = "";
+        SYNCORE.Globals.SYNPROFILER.profileName = "";
+        SYNCORE.Globals.SYNPROFILER.profile = [];
+        SYNCORE.Globals.SYNPROFILER.manifest = [];
+        if (SYNCORE.Globals.SYNPROFILER.profileLoaded)
         {
 
             Console.Write("A profile is already loaded. Proceed? y/N: ");
@@ -20,7 +20,7 @@
                 Console.WriteLine("Y not selected, aborting...");
                 return;
             }
-            else Globals.profileLoaded = false;
+            else SYNCORE.Globals.SYNPROFILER.profileLoaded = false;
         }
         Console.WriteLine("Input the absolute path to the profile:");
         input = "";
@@ -30,7 +30,7 @@
             input = Console.ReadLine();
         }
         input = input.Replace('"', ' ').Trim();
-        Globals.profileLoaded = true;
+        SYNCORE.Globals.SYNPROFILER.profileLoaded = true;
         p.parseProfile(input);
     }
 }
