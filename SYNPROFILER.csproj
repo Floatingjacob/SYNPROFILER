@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <Reference Include="SYNCORE">
-      <HintPath>..\SYNCORE\bin\Release\net10.0\SYNCORE.dll</HintPath>
+      <HintPath>libs\SYNCORE.dll</HintPath>
     </Reference>
   </ItemGroup>
 
