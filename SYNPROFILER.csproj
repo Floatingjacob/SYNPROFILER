@@ -8,12 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="SYNCORE\bin\**" />
-    <Compile Remove="SYNCORE\obj\**" />
-    <EmbeddedResource Remove="SYNCORE\bin\**" />
-    <EmbeddedResource Remove="SYNCORE\obj\**" />
-    <None Remove="SYNCORE\bin\**" />
-    <None Remove="SYNCORE\obj\**" />
+    <Reference Include="SYNCORE">
+      <HintPath>libs\SYNCORE.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 
