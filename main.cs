@@ -1,11 +1,18 @@
-﻿public class main
-{
-    static string input;
-    static string Greeting = $"Welcome to SYNPROFILER: The Overengineered Dossier Program\nStalk With Style!\nSYNPROFILER v{SYNCORE.Globals.SYNPROFILER.version}\nSYNCORE v{SYNCORE.Globals.coreVersion}\n"; // Lazy mode enabled...
-    
-    static string createMenu = @"
+﻿/*
+ TODO: Make program more idiot-proof (the pros call it "input validation", but im not one). 
+ wrap everything with try-catch statements. 
+ consume less caffine. 
+ go to bed earlier.
+ stop splitting every string 50 times in the parser
+ */
+#pragma warning disable CS8601
+using SYNCORE;
 
-";
+public class Entry
+{
+    static string input = "";
+    static string Greeting = $"Welcome to SYNPROFILER: The Overengineered Dossier Manager\nStalk With Style!\nSYNPROFILER v{SYNCORE.Globals.SYNPROFILER.version}\nSYNCORE v{SYNCORE.Globals.coreVersion}\n"; // Lazy mode enabled...
+    
     public static void Main(string[] args)
     {
         while (true)
@@ -31,7 +38,7 @@
 
 #### Main Menu ####
 ";
-            Console.Title = "SYNPROFILER: The Overengineered Dossier Program"; // bc why not?
+            Console.Title = "SYNPROFILER: The Overengineered Dossier Manager"; // bc why not?
             profileManipulation pm = new profileManipulation();
 
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -46,7 +53,7 @@
 
             Console.Write("> ");
             switch (input = Console.ReadLine())
-            {
+            { // only the viewer exists for now
                 case "0":
                     Environment.Exit(0);
                     break;
@@ -54,9 +61,18 @@
                     pm.loadProfile();
                     break;
                 case "4":
-                    
-                    SYNCORE.Globals.SYNPROFILER.displaying = true;
-                    SYNCORE.viewer.displayMenu(SYNCORE.Globals.SYNPROFILER.profile);
+
+                    if (!Globals.SYNPROFILER.profileLoaded)
+                    {
+                        Console.WriteLine("No profile is loaded, load one first (or don't).\nPress any key to recontemplate your choices...");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        SYNCORE.Globals.SYNPROFILER.displaying = true;
+                        SYNCORE.viewer.displayMenu(SYNCORE.Globals.SYNPROFILER.profile);
+                    }
+                        
                     break;
             }
         }

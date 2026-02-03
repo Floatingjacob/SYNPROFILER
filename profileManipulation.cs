@@ -1,4 +1,7 @@
-﻿public class profileManipulation
+﻿#pragma warning disable CS8601
+#pragma warning disable CS8602
+#pragma warning disable CS8618
+public class profileManipulation
 {
     static string input;
     SYNCORE.parser p = new SYNCORE.parser();
