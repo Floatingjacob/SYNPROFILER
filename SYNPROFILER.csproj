@@ -8,9 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="SYNCORE">
-      <HintPath>libs\SYNCORE.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\SYNCORE\SYNCORE.csproj" />
   </ItemGroup>
 
 

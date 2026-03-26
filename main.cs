@@ -5,6 +5,7 @@
  go to bed earlier.
  stop splitting every string 50 times in the parser
  */
+
 #pragma warning disable CS8601
 using SYNCORE;
 
@@ -69,6 +70,7 @@ public class Entry
                     }
                     else
                     {
+                        viewer.sortMenu();
                         SYNCORE.Globals.SYNPROFILER.displaying = true;
                         SYNCORE.viewer.displayMenu(SYNCORE.Globals.SYNPROFILER.profile);
                     }
